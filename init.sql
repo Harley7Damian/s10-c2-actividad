@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS chat_history (
+
+    id SERIAL PRIMARY KEY,
+
+    role VARCHAR(20) NOT NULL,
+
+    message TEXT NOT NULL,
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS uploaded_sources (
+
+    id SERIAL PRIMARY KEY,
+
+    name VARCHAR(255) NOT NULL,
+
+    file_hash VARCHAR(64) UNIQUE NOT NULL,
+
+    content TEXT NOT NULL,
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
